@@ -129,8 +129,8 @@ export default {
 .head {
   z-index: 5;
   position: fixed;
-  top: 143px;
-  left: 134px;
+  top: 143.5px;
+  left: 138.4px;
   display: none;
 
   &.selected {

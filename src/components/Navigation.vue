@@ -14,7 +14,7 @@
         </div>
         <div class="nav-section" :class="{'nav-section-visible': sectionVisible}" ref="navSection">
             <div class="nav-section-part">
-                <img class="part-img" src="../static/female/parts/head.svg">
+                <img class="part-img" src="../static/female/parts/head.png">
             </div>
             <div class="nav-section-button">
               <a @click="linkIt">
