@@ -88,7 +88,8 @@ h2 {
 }
 
 .selector-wrapper {
-  margin-left: 20px;
+  margin-left: 10px;
+  margin-top: -10px;
 }
 
 .cards-container {

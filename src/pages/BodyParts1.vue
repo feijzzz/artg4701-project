@@ -3,23 +3,26 @@
         <Navigation />
         <div class="selector-wrapper"><Selector /></div>
         <div class="body-container">
+
           <div v-if="this.$store.state.gender">
-            <div @click="addParts('head')"><img class="body" src="../static/female/body/body-front.png"></div>
+            <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/female/body/body-front.png"></div>
             <div class="overlay">
               <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
             </div>
+            <div><img class="body" v-bind:class="{back: !isFront}" src="../static/female/body/body-back.png"> </div>
           </div>
           
           <div v-else>
-
-            <div @click="addParts('head')"><img class="body" src="../static/male/body/body-front.png"></div>
+            <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/male/body/body-front.png"></div>
             <div class="overlay">
               <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
             </div>
+            <div><img class="body" v-bind:class="{back: !isFront}" src="../static/male/body/body-back.png"> </div>
           </div>
+
         </div>
         <div class="next-container">
-          <a class="back" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+          <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
           <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
           <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
         </div>
@@ -100,7 +103,7 @@ export default {
     },
     updateFront() {
       this.isFront = !this.isFront;
-    }
+    },
     // insideBox(event) {
     //   const { nextButton } = this.$refs;
     //   if (event.target.contains(nextButton)) {
@@ -157,9 +160,20 @@ export default {
 
 .body {
   height: 550px;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
 
   &-container {
     width: 100%;
+  }
+
+  &.front {
+    display: block;
+  }
+
+  &.back {
+    display: block;
   }
 }
 
@@ -186,8 +200,11 @@ export default {
 }
 
 .back {
-  margin-right: auto;
-  margin-left: 40px;
+  &-link {
+    margin-right: auto;
+    margin-left: 40px;
+  }
+
   &-button {
     height: 35px;
   }
