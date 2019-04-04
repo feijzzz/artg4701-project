@@ -1,17 +1,36 @@
 <template>
-    <div class="main-container">
-        <Navigation />
-        <div class="body-container">
-            <div @click="addParts('head')"><img class="body" src="../static/female/body.png"></div>
-            <div class="overlay">
-              <div @click="addParts('head')"><img class="head" src="../static/female/head-overlay.png"></div>
-            </div>
+  <div class="main-container">
+      <Navigation />
+
+      <div v-if="this.$store.state.gender" class="body-container">
+        <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/female/body/body-front.png"></div>
+        <div class="overlay-front" v-bind:class="{display: isFront}">
+          <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
         </div>
-        <div class="next-container">
-          <a class="back" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
-          <a @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
+        <div class="overlay-back" v-bind:class="{display: !isFront}">
+          <!-- <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div> -->
         </div>
-    </div> 
+        <div><img class="body" v-bind:class="{back: !isFront}" src="../static/female/body/body-back.png"> </div>
+      </div>
+
+
+      <div v-else class="body-container">
+        <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/male/body/body-front.png"></div>
+        <div class="overlay-front" v-bind:class="{display: isFront}">
+          <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
+        </div>
+        <div class="overlay-back" v-bind:class="{display: !isFront}">
+          <!-- <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div> -->
+        </div>
+        <div><img class="body" v-bind:class="{back: !isFront}" src="../static/male/body/body-back.png"> </div>
+      </div>
+
+      <div class="next-container">
+        <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+        <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
+        <a @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -26,6 +45,7 @@ export default {
   data() {
     return {
       localParts: [],
+      isFront: true,
     }
   },
   methods: {
@@ -75,6 +95,9 @@ export default {
     },
     backStep() {
       this.$router.push({ name: 'symptoms2' });
+    },
+    updateFront() {
+      this.isFront = !this.isFront;
     }
   },
   mounted() {
@@ -99,9 +122,11 @@ export default {
   margin-bottom: 20px;
 }
 
-.overlay {
-  img {
-    height: 550px;
+.overlay{
+  &-front, &-back {
+    img {
+      height: 550px;
+    }
   }
 }
 
@@ -119,10 +144,21 @@ export default {
 
 .body {
     height: 550px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
 
     &-container {
       width: 100%;
       margin-top: 30px;
+    }
+
+    &.front {
+      display: block;
+    }
+
+    &.back {
+      display: block;
     }
 }
 
@@ -148,8 +184,21 @@ export default {
 }
 
 .back {
-  margin-right: auto;
-  margin-left: 40px;
+
+  &-link {
+    margin-right: auto;
+    margin-left: 40px;
+  }
+  &-button {
+    height: 35px;
+  }
+}
+
+.switch{
+  &-link{
+    margin-right: auto;
+  }
+
   &-button {
     height: 35px;
   }

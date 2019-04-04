@@ -13,8 +13,12 @@
             <button v-if="!buttonType" class="nav-right placeholder"></button>
         </div>
         <div class="nav-section" :class="{'nav-section-visible': sectionVisible}" ref="navSection">
-            <div class="nav-section-part">
+            <div v-if="this.$store.state.gender" class="nav-section-part">
                 <img class="part-img" src="../static/female/parts/head.png">
+            </div>
+
+            <div v-else class="nav-section-part">
+                <img class="part-img" src="../static/male/parts/head.png">
             </div>
             <div class="nav-section-button">
               <a @click="linkIt">

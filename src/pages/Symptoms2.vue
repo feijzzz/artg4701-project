@@ -3,13 +3,22 @@
         <Navigation />
         <div class="body-container">
           <div class="selector-wrapper">
-          <Selector />
+            <Selector />
           </div>
           <h2> select your symptoms </h2>
-          <div class="cards-container">
-            <a @click="addSymptom('acne')" ><div class="card"><img src="../static/female/head/acne.png"></div></a>
-            <a @click="addSymptom('bumps')"><div class="card"><img src="../static/female/head/bumps.png"></div></a>
-            <a @click="addSymptom('skin-discoloration')" ><div class="card"><img src="../static/female/head/skin-discoloration.png"></div></a>
+          <div v-if="this.$store.state.gender">
+            <div class="cards-container">
+              <a @click="addSymptom('acne')" ><div class="card"><img src="../static/female/head/acne.png"></div></a>
+              <a @click="addSymptom('bumps')"><div class="card"><img src="../static/female/head/bumps.png"></div></a>
+              <a @click="addSymptom('skin-discoloration')" ><div class="card"><img src="../static/female/head/skin-discoloration.png"></div></a>
+            </div>
+          </div>
+          <div v-else>
+            <div class="cards-container">
+              <a @click="addSymptom('acne')" ><div class="card"><img class="male" src="../static/male/head/acne.png"></div></a>
+              <a @click="addSymptom('bumps')"><div class="card"><img class="male" src="../static/male/head/bumps.png"></div></a>
+              <a @click="addSymptom('skin-discoloration')" ><div class="card"><img class="male" src="../static/male/head/skin-discoloration.png"></div></a>
+            </div>
           </div>
         </div>
     </div>
@@ -105,11 +114,15 @@ h2 {
   border-radius: 15px; 
   background-color: #ffffff;
   overflow: hidden;
-  // background-color: #f2f2f2; 
+  // background-color: #f2f2f2;x
 }
 
 img {
   width: 150%;
   margin-left: -30px;
+
+  &.male {
+    margin-left: -50px;
+  }
 }
 </style>

@@ -3,13 +3,24 @@
         <Navigation />
         <div class="selector-wrapper"><Selector /></div>
         <div class="body-container">
-            <div @click="addParts('head')"><img class="body" src="../static/female/body.png"></div>
+          <div v-if="this.$store.state.gender">
+            <div @click="addParts('head')"><img class="body" src="../static/female/body/body-front.png"></div>
             <div class="overlay">
-              <div @click="addParts('head')"><img class="head" src="../static/female/head-overlay.png"></div>
+              <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
             </div>
+          </div>
+          
+          <div v-else>
+
+            <div @click="addParts('head')"><img class="body" src="../static/male/body/body-front.png"></div>
+            <div class="overlay">
+              <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
+            </div>
+          </div>
         </div>
         <div class="next-container">
           <a class="back" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+          <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
           <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
         </div>
     </div> 
@@ -29,6 +40,8 @@ export default {
   data() {
     return {
       localParts: [],
+      // gender: true,
+      isFront: true,
     }
   },
   methods: {
@@ -84,6 +97,9 @@ export default {
     },
     backStep() {
       this.$router.push({ name: 'initial' });
+    },
+    updateFront() {
+      this.isFront = !this.isFront;
     }
     // insideBox(event) {
     //   const { nextButton } = this.$refs;
@@ -117,7 +133,8 @@ export default {
 }
 
 .selector-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
 
 .overlay {
@@ -129,7 +146,7 @@ export default {
 .head {
   z-index: 5;
   position: fixed;
-  top: 143.5px;
+  top: 123.5px;
   left: 138.4px;
   display: none;
 
@@ -139,11 +156,11 @@ export default {
 }
 
 .body {
-    height: 550px;
+  height: 550px;
 
-    &-container {
-      width: 100%;
-    }
+  &-container {
+    width: 100%;
+  }
 }
 
 
@@ -171,6 +188,16 @@ export default {
 .back {
   margin-right: auto;
   margin-left: 40px;
+  &-button {
+    height: 35px;
+  }
+}
+
+.switch{
+  &-link{
+    margin-right: auto;
+  }
+
   &-button {
     height: 35px;
   }

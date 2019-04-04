@@ -3,7 +3,7 @@
         <Navigation buttonType='export'/>
         <div class="initial">
             <div class="card"> 
-                <a @click="link1"><img class="body" src="../static/female/body.png"></a>
+                <a @click="link1"><img class="body" src="../static/female/body/body-front.png"></a>
             </div>
             <div class="card"> 
                 <a @click="link2">

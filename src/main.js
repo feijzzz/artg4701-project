@@ -85,6 +85,9 @@ const store = new Vuex.Store({
         // console.log('def', state.selectedSymptoms);
       // }
     },
+    genderSwitch(state, payload) {
+      state.gender = payload.gender;
+    },
     addToAllSymptoms (state, payload) {
       state.allSymptoms = payload.allSymptoms
     },

@@ -1,16 +1,27 @@
 <template>
     <div class="selector"> 
-        <div class="selector-option">Male</div>
-        <div class="selector-option selected">Female</div> 
+        <div @click="switchGender(false)" class="selector-option" v-bind:class="{selected: !this.gender}">Male</div>
+        <div @click="switchGender(true)" class="selector-option" v-bind:class="{selected: this.gender}">Female</div> 
     </div>
 </template>
 
 <script>
 export default {
     name: 'Selector',
+    data() {
+        return {
+            gender: this.$store.state.gender,
+        }
+    },
     mounted() {
         // console.log(this.$store);
     },
+    methods: {
+        switchGender(bool) {
+            this.gender = bool;
+            this.$store.commit('genderSwitch', {gender: bool});
+        },
+    }
 }
 </script>
 

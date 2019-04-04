@@ -2,7 +2,7 @@
     <div class="main-container">
         <Navigation buttonType='export'/>
         <h2> Symptoms </h2>
-        <div class="cards-container">
+        <div v-if="this.$store.state.gender" class="cards-container">
             <div class="card-add" @click="linkNew"><img src="../static/button/add.svg"></div>
             <div v-for="(value, i) in this.$store.state.selectedSymptoms" 
                 class="card" 
@@ -20,7 +20,27 @@
                 <img v-if="value==='nausea'" src="../static/female/head/nausea.png">
                 <img v-if="value==='skin-discoloration'" src="../static/female/head/skin-discoloration.png">
                 <img v-if="value==='vomiting'" src="../static/female/head/vomiting.png">
-          
+            </div>
+        </div>
+
+        <div v-else class="cards-container">
+            <div class="card-add" @click="linkNew"><img src="../static/button/add.svg"></div>
+            <div v-for="(value, i) in this.$store.state.selectedSymptoms" 
+                class="card" 
+                :class="value"
+                :key="i">
+                <img v-if="value==='acne'" class="male" src="../static/male/head/acne.png">
+                <img v-if="value==='blurred-vision'" class="male" src="../static/male/head/blurred-vision.png">
+                <img v-if="value==='bumps'" class="male" src="../static/male/head/bumps.png">
+                <img v-if="value==='dizziness'" class="male" src="../static/male/head/dizziness.png">
+                <img v-if="value==='frequent-yawning'" class="male" src="../static/male/head/frequent-yawning.png">
+                <img v-if="value==='headache'" class="male" src="../static/male/head/headache.png">
+                <img v-if="value==='increased-thirst'" class="male" src="../static/male/head/increased-thirst.png">
+                <img v-if="value==='lack-of-sleep'" class="male" src="../static/male/head/lack-of-sleep.png">
+                <img v-if="value==='moodiness'" class="male" src="../static/male/head/moodiness.png">
+                <img v-if="value==='nausea'" class="male" src="../static/male/head/nausea.png">
+                <img v-if="value==='skin-discoloration'" class="male" src="../static/male/head/skin-discoloration.png">
+                <img v-if="value==='vomiting'" class="male" src="../static/male/head/vomiting.png">
             </div>
         </div>
         <!-- <img v-if="this.$store.state.symptoms.length !== 0" v-for="symptom in this.$store.state.symptoms"> -->
@@ -45,7 +65,7 @@ export default {
       }
   },
   mounted() {
-    // console.log(this.$store.state);
+    console.log(this.$store.state);
     // console.log(this.$store.state.selectedBodyParts);
   }
 }
@@ -114,8 +134,12 @@ h2 {
     }
 
     img {
-    width: 150%;
-    margin-left: -30px;
+      width: 150%;
+      margin-left: -30px;
+
+      &.male {
+        margin-left: -50px; 
+      }
     }
 }
 </style>

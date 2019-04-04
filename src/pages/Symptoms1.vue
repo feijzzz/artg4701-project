@@ -3,7 +3,7 @@
         <Navigation buttonType='human'/>
         <div class="body-container">
           <h2> select your symptoms </h2>
-          <div class="cards-container">
+          <div v-if="this.$store.state.gender" class="cards-container">
             <button @click="addSymptom('acne')"><div class="card acne"><img src="../static/female/head/acne.png"></div></button>
             <button @click="addSymptom('blurred-vision')"><div class="card blurred-vision"><img src="../static/female/head/blurred-vision.png"></div></button>
             <button @click="addSymptom('bumps')"><div class="card bumps"><img src="../static/female/head/bumps.png"></div></button>
@@ -16,6 +16,21 @@
             <button @click="addSymptom('nausea')"><div class="card nausea"><img src="../static/female/head/nausea.png"></div></button>
             <button @click="addSymptom('skin-discoloration')"><div class="card skin-discoloration"><img src="../static/female/head/skin-discoloration.png"></div></button>
             <button @click="addSymptom('vomiting')"><div class="card vomiting"><img src="../static/female/head/vomiting.png"></div></button>
+          </div>
+
+          <div v-else class="cards-containermale">
+            <button @click="addSymptom('acne')"><div class="card acne"><img class="male" src="../static/male/head/acne.png"></div></button>
+            <button @click="addSymptom('blurred-vision')"><div class="card blurred-vision"><img class="male" src="../static/male/head/blurred-vision.png"></div></button>
+            <button @click="addSymptom('bumps')"><div class="card bumps"><img class="male" src="../static/male/head/bumps.png"></div></button>
+            <button @click="addSymptom('dizziness')"><div class="card dizziness"><img class="male" src="../static/male/head/dizziness.png"></div></button>
+            <button @click="addSymptom('frequent-yawning')"><div class="card frequent-yawning"><img class="male" src="../static/male/head/frequent-yawning.png"></div></button>
+            <button @click="addSymptom('headache')"><div class="card headache"><img class="male" src="../static/male/head/headache.png"></div></button>
+            <button @click="addSymptom('increased-thirst')"><div class="card increased-thirst"><img class="male" src="../static/male/head/increased-thirst.png"></div></button>
+            <button @click="addSymptom('lack-of-sleep')"><div class="card lack-of-sleep"><img class="male" src="../static/male/head/lack-of-sleep.png"></div></button>
+            <button @click="addSymptom('moodiness')"><div class="card moodiness"><img class="male" src="../static/male/head/moodiness.png"></div></button>
+            <button @click="addSymptom('nausea')"><div class="card nausea"><img class="male" src="../static/male/head/nausea.png"></div></button>
+            <button @click="addSymptom('skin-discoloration')"><div class="card skin-discoloration"><img class="male" src="../static/male/head/skin-discoloration.png"></div></button>
+            <button @click="addSymptom('vomiting')"><div class="card vomiting"><img class="male" src="../static/male/head/vomiting.png"></div></button>
           </div>
         </div>
     </div>
@@ -154,6 +169,10 @@ h2 {
   img {
     width: 150%;
     margin-left: -30px;
+
+    &.male {
+      margin-left: -50px;
+    }
   }
 }
 
