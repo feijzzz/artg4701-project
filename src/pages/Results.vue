@@ -8,19 +8,24 @@
                 class="card" 
                 :class="value"
                 :key="i">
-                <img v-if="value==='acne'" src="../static/female/head/acne.png">
-                <img v-if="value==='blurred-vision'" src="../static/female/head/blurred-vision.png">
-                <img v-if="value==='bumps'" src="../static/female/head/bumps.png">
-                <img v-if="value==='dizziness'" src="../static/female/head/dizziness.png">
-                <img v-if="value==='frequent-yawning'" src="../static/female/head/frequent-yawning.png">
-                <img v-if="value==='headache'" src="../static/female/head/headache.png">
-                <img v-if="value==='increased-thirst'" src="../static/female/head/increased-thirst.png">
-                <img v-if="value==='lack-of-sleep'" src="../static/female/head/lack-of-sleep.png">
-                <img v-if="value==='moodiness'" src="../static/female/head/moodiness.png">
-                <img v-if="value==='nausea'" src="../static/female/head/nausea.png">
-                <img v-if="value==='skin-discoloration'" src="../static/female/head/skin-discoloration.png">
-                <img v-if="value==='vomiting'" src="../static/female/head/vomiting.png">
-            </div>
+                <button v-if="value==='acne'" @click="selectSymptom('acne')">
+                  <button class="remove" @click="updateStore('acne')"><img class="remove-button" src="../static/button/complete.svg"></button>
+                  <div class="acne">
+                    <img class="female" src="../static/female/head/acne.png">
+                  </div>
+                </button>
+                <button v-if="value==='blurred-vision'" @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="female" src="../static/female/head/blurred-vision.png"></div></button>
+                <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="female" src="../static/female/head/bumps.png"></div></button>
+                <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="female" src="../static/female/head/dizziness.png"></div></button>
+                <button v-if="value==='frequent-yawning'" @click="selectSymptom('frequent-yawning')"><div class="frequent-yawning"><img class="female" src="../static/female/head/frequent-yawning.png"></div></button>
+                <button v-if="value==='headache'" @click="selectSymptom('headache')"><div class="headache"><img class="female" src="../static/female/head/headache.png"></div></button>
+                <button v-if="value==='increased-thirst'" @click="selectSymptom('increased-thirst')"><div class="increased-thirst"><img class="female" src="../static/female/head/increased-thirst.png"></div></button>
+                <button v-if="value==='lack-of-sleep'" @click="selectSymptom('lack-of-sleep')"><div class="lack-of-sleep"><img class="female" src="../static/female/head/lack-of-sleep.png"></div></button>
+                <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="female" src="../static/female/head/moodiness.png"></div></button>
+                <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="female" src="../static/female/head/nausea.png"></div></button>
+                <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="female" src="../static/female/head/skin-discoloration.png"></div></button>
+                <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="female" src="../static/female/head/vomiting.png"></div></button>
+              </div>
         </div>
 
         <div v-else class="cards-container">
@@ -29,19 +34,21 @@
                 class="card" 
                 :class="value"
                 :key="i">
-                <img v-if="value==='acne'" class="male" src="../static/male/head/acne.png">
-                <img v-if="value==='blurred-vision'" class="male" src="../static/male/head/blurred-vision.png">
-                <img v-if="value==='bumps'" class="male" src="../static/male/head/bumps.png">
-                <img v-if="value==='dizziness'" class="male" src="../static/male/head/dizziness.png">
-                <img v-if="value==='frequent-yawning'" class="male" src="../static/male/head/frequent-yawning.png">
-                <img v-if="value==='headache'" class="male" src="../static/male/head/headache.png">
-                <img v-if="value==='increased-thirst'" class="male" src="../static/male/head/increased-thirst.png">
-                <img v-if="value==='lack-of-sleep'" class="male" src="../static/male/head/lack-of-sleep.png">
-                <img v-if="value==='moodiness'" class="male" src="../static/male/head/moodiness.png">
-                <img v-if="value==='nausea'" class="male" src="../static/male/head/nausea.png">
-                <img v-if="value==='skin-discoloration'" class="male" src="../static/male/head/skin-discoloration.png">
-                <img v-if="value==='vomiting'" class="male" src="../static/male/head/vomiting.png">
-            </div>
+                <button v-if="value==='acne'" @click="selectSymptom('acne')">
+                  <div class="acne"><img class="male" src="../static/male/head/acne.png"></div>
+                </button>
+                <button v-if="value==='blurred-vision'" @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="male" src="../static/male/head/blurred-vision.png"></div></button>
+                <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="male" src="../static/male/head/bumps.png"></div></button>
+                <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="male" src="../static/male/head/dizziness.png"></div></button>
+                <button v-if="value==='frequent-yawning'" @click="selectSymptom('frequent-yawning')"><div class="frequent-yawning"><img class="male" src="../static/male/head/frequent-yawning.png"></div></button>
+                <button v-if="value==='headache'" @click="selectSymptom('headache')"><div class="headache"><img class="male" src="../static/male/head/headache.png"></div></button>
+                <button v-if="value==='increased-thirst'" @click="selectSymptom('increased-thirst')"><div class="increased-thirst"><img class="male" src="../static/male/head/increased-thirst.png"></div></button>
+                <button v-if="value==='lack-of-sleep'" @click="selectSymptom('lack-of-sleep')"><div class="lack-of-sleep"><img class="male" src="../static/male/head/lack-of-sleep.png"></div></button>
+                <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="male" src="../static/male/head/moodiness.png"></div></button>
+                <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="male" src="../static/male/head/nausea.png"></div></button>
+                <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="male" src="../static/male/head/skin-discoloration.png"></div></button>
+                <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="male" src="../static/male/head/vomiting.png"></div></button>
+              </div>
         </div>
         <!-- <img v-if="this.$store.state.symptoms.length !== 0" v-for="symptom in this.$store.state.symptoms"> -->
             <!-- <img class="card symptoms" alt="Vue logo" src="../static/logo.png">
@@ -57,12 +64,48 @@ export default {
     Navigation
   },
   methods: {
-      linkNew() {
-        this.$router.push({ name: 'initial' });
-      },
-      getImageUrl(val) {
-        return require.context(`../static/female/head/${val}.png`);
+    linkNew() {
+      this.$router.push({ name: 'initial' });
+    },
+    getImageUrl(val) {
+      return require.context(`../static/female/head/${val}.png`);
+    },
+    selectSymptom(symp) {
+      const symptom = document.getElementsByClassName(symp)[0];
+      const selected = document.getElementsByClassName('selected');
+      if (selected.length === 0) {
+        symptom.classList.add('selected');
       }
+      else {
+        if (selected[0].classList[1] === symp) {
+          symptom.classList.remove('selected');
+        }
+      }
+    },
+    updateStore(symp){
+      // const sympList = this.$store.state.selectedSymptoms;
+      console.log('here');
+      const repeatIndexMaster = this.checkSymptom(symp, this.$store.state.selectedSymptoms);
+      
+      const mainFiltered = this.$store.state.selectedSymptoms.filter(function(value, index, arr){
+        return index !== repeatIndexMaster;
+      });
+      this.$store.commit('mutateSelectedSymptoms', {selectedSymptoms: mainFiltered});
+      console.log(this.$store.state.selectedSymptoms);
+      this.$router.push({ name: 'results' });
+    },
+    checkSymptom(value, array) {
+      if (array.length === 0) {
+        return -1;
+      }
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (element.toLowerCase() === value.toLowerCase()) {
+          return index;
+        }
+      }
+      return -2;
+    }
   },
   mounted() {
     console.log(this.$store.state);
@@ -131,6 +174,26 @@ h2 {
             height: 95px;
             width: 95px;
         }
+    }
+
+    .remove {
+      display: none;
+    }
+
+    &.selected {
+      // background-color: #1FA6C0;
+
+      .remove {
+        display: block;
+        width: 20px;
+        z-index: 5;
+        margin-left: 92%;
+        margin-top: 20px;
+      }
+
+      img {
+        margin-top: -35px;
+      }
     }
 
     img {

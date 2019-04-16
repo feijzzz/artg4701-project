@@ -184,7 +184,6 @@ export default {
 }
 
 .back {
-
   &-link {
     margin-right: auto;
     margin-left: 40px;

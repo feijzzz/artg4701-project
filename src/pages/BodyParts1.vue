@@ -1,10 +1,7 @@
 <template>
     <div class="main-container">
         <Navigation />
-        <div class="selector-wrapper"><Selector /></div>
-        <div class="body-container">
-
-          <div v-if="this.$store.state.gender">
+          <div v-if="this.$store.state.gender" class="body-container">
             <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/female/body/body-front.png"></div>
             <div class="overlay">
               <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
@@ -12,25 +9,23 @@
             <div><img class="body" v-bind:class="{back: !isFront}" src="../static/female/body/body-back.png"> </div>
           </div>
           
-          <div v-else>
+          <div v-else class="body-container">
             <div @click="addParts('head')"><img class="body" v-bind:class="{front: isFront}" src="../static/male/body/body-front.png"></div>
             <div class="overlay">
               <div @click="addParts('head')"><img class="head" src="../static/female/body/head-overlay.png"></div>
             </div>
             <div><img class="body" v-bind:class="{back: !isFront}" src="../static/male/body/body-back.png"> </div>
           </div>
-
-        </div>
-        <div class="next-container">
-          <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
-          <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
-          <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
-        </div>
+          <div class="next-container">
+            <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+            <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
+            <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a>
+          </div>
     </div> 
 </template>
 
 <script>
-import Selector from '../components/Selector'
+// import Selector from '../components/Selector'
 import Navigation from '../components/Navigation'
 import { nextTick } from 'q';
 
@@ -38,7 +33,7 @@ export default {
   name: 'BodyParts',
   components: {
     Navigation,
-    Selector,
+    // Selector,
   },
   data() {
     return {
@@ -149,7 +144,7 @@ export default {
 .head {
   z-index: 5;
   position: fixed;
-  top: 123.5px;
+  top: 85px;
   left: 138.4px;
   display: none;
 
@@ -166,6 +161,7 @@ export default {
 
   &-container {
     width: 100%;
+    margin-top: 30px;
   }
 
   &.front {

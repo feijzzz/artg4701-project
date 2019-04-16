@@ -3,7 +3,7 @@
         <div class="nav">
             <a href="./results"> <img class="nav-logo" alt="Vue logo" src="../static/logo-placeholder.svg"></a>
             <div class="nav-title"> Signa </div>
-            <button class="nav-right" v-if="buttonType==='export'">
+            <button class="nav-right"  @click="linkComplete" v-if="buttonType==='export'">
                 <img  src="../static/button/export.svg">
             </button>
             <button v-if="buttonType==='human'" class="nav-right human-button" @click="toggleSection">
@@ -73,6 +73,9 @@ export default {
     },
     linkIt() {
       this.$router.push({ name: 'results' });
+    },
+    linkComplete() {
+      this.$router.push({ name: 'complete' });
     }
   },
   mounted() {

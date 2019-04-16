@@ -2,9 +2,9 @@
     <div class="main-container">
         <Navigation />
         <div class="body-container">
-          <div class="selector-wrapper">
+          <!-- <div class="selector-wrapper">
             <Selector />
-          </div>
+          </div> -->
           <h2> select your symptoms </h2>
           <div v-if="this.$store.state.gender">
             <div class="cards-container">
@@ -26,13 +26,13 @@
 
 <script>
 import Navigation from '../components/Navigation';
-import Selector from '../components/Selector';
+// import Selector from '../components/Selector';
 
 export default {
   name: 'Symptoms1',
   components: {
     Navigation, 
-    Selector
+    // Selector
   },
   methods: {
     addSymptom(symp) {

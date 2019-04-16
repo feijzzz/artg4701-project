@@ -10,6 +10,7 @@ import Initial from './pages/Initial';
 import Symptoms1 from './pages/Symptoms1';
 import Symptoms2 from './pages/Symptoms2';
 import Results from './pages/Results';
+import Sent from './pages/Sent';
 
 Vue.config.productionTip = false
 
@@ -47,6 +48,11 @@ const routes = [
     component: Results,
     name: 'results',
   },
+  {
+    path: '/complete',
+    component: Sent,
+    name: 'complete',
+  }
 ]
 
 const router = new VueRouter({
@@ -60,7 +66,7 @@ const store = new Vuex.Store({
     allSymptoms: [],
     selectedSymptoms: [],
     selectedBodyParts: [], //['head'],
-    gender: true, // true = female, false = male
+    gender: null, // true = female, false = male
     path1: false,
   }, 
   mutations: {

@@ -3,6 +3,10 @@
         <div @click="switchGender(false)" class="selector-option" v-bind:class="{selected: !this.gender}">Male</div>
         <div @click="switchGender(true)" class="selector-option" v-bind:class="{selected: this.gender}">Female</div> 
     </div>
+    <!-- <div v-else class="selector"> 
+        <div class="selector-option" v-bind:class="{selected: !this.gender}">Male</div>
+        <div class="selector-option" v-bind:class="{selected: this.gender}">Female</div> 
+    </div> -->
 </template>
 
 <script>
