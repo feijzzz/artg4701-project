@@ -71,20 +71,20 @@ const store = new Vuex.Store({
     mutateSelectedSymptoms (state, payload) {
       state.selectedSymptoms = payload.selectedSymptoms
     },
-    addSelectedSymptom (state, payload) {
-      // let repeat = false;
-      // for (let index = 0; index < state.selectedSymptoms.length; index++) {
-      //   const element = state.selectedSymptoms[index];
-      //   if (element === payload.value) {
-      //     repeat = true;
-      //   }
-      // }
-      // if (!repeat) {
-        // console.log('abc', state.selectedSymptoms);
-        // state.selectedSymptoms = payload.symp;
-        // console.log('def', state.selectedSymptoms);
-      // }
-    },
+    // addSelectedSymptom (state, payload) {
+    //   // let repeat = false;
+    //   // for (let index = 0; index < state.selectedSymptoms.length; index++) {
+    //   //   const element = state.selectedSymptoms[index];
+    //   //   if (element === payload.value) {
+    //   //     repeat = true;
+    //   //   }
+    //   // }
+    //   // if (!repeat) {
+    //     // console.log('abc', state.selectedSymptoms);
+    //     // state.selectedSymptoms = payload.symp;
+    //     // console.log('def', state.selectedSymptoms);
+    //   // }
+    // },
     genderSwitch(state, payload) {
       state.gender = payload.gender;
     },
