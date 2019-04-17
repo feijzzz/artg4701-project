@@ -8,7 +8,7 @@
                 </div>
                 <div class="card"> 
                     <a @click="link2">
-                        <div class="symptoms"><img src="../static/symptoms.png"></div>
+                        <div class="symptoms"><img src="../static/symptoms-female.png"></div>
                     </a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="card"> 
                     <a @click="link2">
-                        <div class="symptoms"><img src="../static/symptoms.png"></div>
+                        <div class="symptoms"><img src="../static/symptoms-male.png"></div>
                     </a>
                 </div>
             </div>

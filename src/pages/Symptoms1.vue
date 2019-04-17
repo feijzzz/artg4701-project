@@ -159,7 +159,7 @@ h2 {
   width: 175px;
   border-radius: 15px; 
   background-color: #ffffff;
-  /* background-color: #f2f2f2; */
+  // background-color: #f2f2f2; 
   overflow: hidden;
 
   &.selected {

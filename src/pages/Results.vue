@@ -8,12 +8,14 @@
                 class="card" 
                 :class="value"
                 :key="i">
-                <button v-if="value==='acne'" @click="selectSymptom('acne')">
-                  <button class="remove" @click="updateStore('acne')"><img class="remove-button" src="../static/button/complete.svg"></button>
-                  <div class="acne">
-                    <img class="female" src="../static/female/head/acne.png">
-                  </div>
-                </button>
+                <div v-if="value==='acne'"> 
+                  <button @click="updateStore('acne')" class="remove" ><img class="remove-button" src="../static/button/complete.svg"></button>  
+                  <button  @click="selectSymptom('acne')">
+                    <div class="acne">
+                      <img class="female" src="../static/female/head/acne.png">
+                    </div>
+                  </button>
+                </div>
                 <button v-if="value==='blurred-vision'" @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="female" src="../static/female/head/blurred-vision.png"></div></button>
                 <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="female" src="../static/female/head/bumps.png"></div></button>
                 <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="female" src="../static/female/head/dizziness.png"></div></button>
@@ -159,6 +161,7 @@ h2 {
     border-radius: 15px; 
     background-color: #ffffff;
     overflow: hidden;
+      border: 2px solid #ffffff;
     
     &-add {
         margin-top: 15px;
@@ -182,6 +185,7 @@ h2 {
 
     &.selected {
       // background-color: #1FA6C0;
+      border: 2px solid #1FA6C0;
 
       .remove {
         display: block;
