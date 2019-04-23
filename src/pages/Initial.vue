@@ -23,6 +23,12 @@
                 </div>
             </div>
         <!-- </div> -->
+
+          <div v-if="this.$store.state.selectedSymptoms.length !== 0" class="next-container">
+            <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+            <!-- <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
+            <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a> -->
+          </div>
     </div>
 </template>
 
@@ -42,7 +48,10 @@ export default {
       },
       link2() {
         this.$router.push({ name: 'symptoms2' });
-      }
+      },
+        backStep() {
+        this.$router.push({ name: 'results' });
+        },
   }
 }
 </script>
@@ -56,17 +65,51 @@ export default {
   margin-top: 55px;
 }
 
-.body-container {
+.body-container, .next-container {
   display: flex; 
   align-items: center; 
   flex-wrap: wrap;
 }
 
-.initial {
+.next{
+  &-container{
     width: 100%;
+    top: 93vh;
+    right: 20px;
+    position: fixed;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+
+    .disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &-button {
+    height: 35px;
+  }
+}
+
+
+.back {
+  &-link {
+    margin-right: auto;
+    margin-left: 40px;
+  }
+
+  &-button {
+    height: 35px;
+  }
+}
+
+.initial {
+  width: 100%;
   display: flex;
   align-items: center;    
   justify-content: space-evenly;
+  margin-top: -25px;
 }
 
 .selector-wrapper {

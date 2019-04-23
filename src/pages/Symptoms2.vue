@@ -21,6 +21,13 @@
             </div>
           </div>
         </div>
+
+        
+          <div class="next-container">
+            <a class="back-link" @click="backStep"><img class="back-button" src="../static/button/back.svg"></a>
+            <!-- <a class="switch-link" @click="updateFront" > <img class="switch-button" src="../static/button/switch.svg"> </a>
+            <a class="disabled" ref="nextButton" @click="updateStore"><img class="next-button" src="../static/button/complete.svg"></a> -->
+          </div>
     </div>
 </template>
 
@@ -58,7 +65,10 @@ export default {
         }
       }
       return -2;
-    }
+    },
+        backStep() {
+        this.$router.push({ name: 'initial' });
+        },
   }
 }
 </script>
@@ -68,7 +78,7 @@ export default {
   margin-top: 55px;
 }
 
-.body-container, .main-container, .cards-container {
+.body-container, .main-container, .cards-container, .next-container {
   width: 100%;
   display: flex;
   align-items: center;    
@@ -116,6 +126,40 @@ h2 {
   background-color: #ffffff;
   overflow: hidden;
   // background-color: #f2f2f2;x
+}
+
+
+.next{
+  &-container{
+    width: 100%;
+    top: 93vh;
+    right: 20px;
+    position: fixed;
+    height: 35px;
+    display: flex;
+    justify-content: flex-end;
+
+    .disabled {
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+
+  &-button {
+    height: 35px;
+  }
+}
+
+
+.back {
+  &-link {
+    margin-right: auto;
+    // margin-left: 40px;
+  }
+
+  &-button {
+    height: 35px;
+  }
 }
 
 img {

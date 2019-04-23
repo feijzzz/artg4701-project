@@ -2,6 +2,9 @@
     <div class="main-container">
         <Navigation />
         <div class="complete-container">
+            <div class="file-wrapper">
+                <img class="file" src="../static/file.png">
+            </div>
             <h2> Sent to doctor </h2>
         </div>
     </div>
@@ -39,6 +42,12 @@ export default {
     margin-top: 50%;
 }
 
+.file {
+    &-wrapper {
+        width: 100%;
+    }
+    width: 128px;
+}
 h2 {
   text-transform: uppercase;
   margin-top: 20px;

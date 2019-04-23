@@ -1,12 +1,12 @@
 <template>
-    <div class="selector"> 
+    <div v-if="this.$store.state.selectedSymptoms.length === 0" class="selector"> 
         <div @click="switchGender(false)" class="selector-option" v-bind:class="{selected: !this.gender}">Male</div>
         <div @click="switchGender(true)" class="selector-option" v-bind:class="{selected: this.gender}">Female</div> 
     </div>
-    <!-- <div v-else class="selector"> 
+    <div v-else class="selector"> 
         <div class="selector-option" v-bind:class="{selected: !this.gender}">Male</div>
         <div class="selector-option" v-bind:class="{selected: this.gender}">Female</div> 
-    </div> -->
+    </div>
 </template>
 
 <script>

@@ -9,24 +9,67 @@
                 :class="value"
                 :key="i">
                 <div v-if="value==='acne'"> 
-                  <button @click="updateStore('acne')" class="remove" ><img class="remove-button" src="../static/button/complete.svg"></button>  
+                  <button @click="updateStore('acne')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
                   <button  @click="selectSymptom('acne')">
                     <div class="acne">
                       <img class="female" src="../static/female/head/acne.png">
                     </div>
                   </button>
                 </div>
-                <button v-if="value==='blurred-vision'" @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="female" src="../static/female/head/blurred-vision.png"></div></button>
-                <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="female" src="../static/female/head/bumps.png"></div></button>
-                <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="female" src="../static/female/head/dizziness.png"></div></button>
-                <button v-if="value==='frequent-yawning'" @click="selectSymptom('frequent-yawning')"><div class="frequent-yawning"><img class="female" src="../static/female/head/frequent-yawning.png"></div></button>
-                <button v-if="value==='headache'" @click="selectSymptom('headache')"><div class="headache"><img class="female" src="../static/female/head/headache.png"></div></button>
-                <button v-if="value==='increased-thirst'" @click="selectSymptom('increased-thirst')"><div class="increased-thirst"><img class="female" src="../static/female/head/increased-thirst.png"></div></button>
-                <button v-if="value==='lack-of-sleep'" @click="selectSymptom('lack-of-sleep')"><div class="lack-of-sleep"><img class="female" src="../static/female/head/lack-of-sleep.png"></div></button>
-                <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="female" src="../static/female/head/moodiness.png"></div></button>
-                <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="female" src="../static/female/head/nausea.png"></div></button>
-                <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="female" src="../static/female/head/skin-discoloration.png"></div></button>
-                <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="female" src="../static/female/head/vomiting.png"></div></button>
+                <div v-if="value==='blurred-vision'">
+                  <button @click="updateStore('blurred-vision')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="female" src="../static/female/head/blurred-vision.png"></div></button>
+                </div>
+                <div v-if="value==='blurred-vision'">
+                  <button @click="updateStore('bumps')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="female" src="../static/female/head/bumps.png"></div></button>
+                </div>
+                
+                <div v-if="value==='dizziness'">
+                  <button @click="updateStore('dizziness')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="female" src="../static/female/head/dizziness.png"></div></button>
+                </div>
+                
+                <div v-if="value==='frequent-yawning'">
+                  <button @click="updateStore('frequent-yawning')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='frequent-yawning'" @click="selectSymptom('frequent-yawning')"><div class="frequent-yawning"><img class="female" src="../static/female/head/frequent-yawning.png"></div></button>
+                </div>
+                
+                <div v-if="value==='headache'">
+                  <button @click="updateStore('headache')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='headache'" @click="selectSymptom('headache')"><div class="headache"><img class="female" src="../static/female/head/headache.png"></div></button>
+                </div>
+                
+                <div v-if="value==='increased-thirst'">
+                  <button @click="updateStore('increased-thirst')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='increased-thirst'" @click="selectSymptom('increased-thirst')"><div class="increased-thirst"><img class="female" src="../static/female/head/increased-thirst.png"></div></button>
+                </div>
+                
+                <div v-if="value==='lack-of-sleep'">
+                  <button @click="updateStore('lack-of-sleep')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='lack-of-sleep'" @click="selectSymptom('lack-of-sleep')"><div class="lack-of-sleep"><img class="female" src="../static/female/head/lack-of-sleep.png"></div></button>
+                </div>
+
+                <div v-if="value==='moodiness'">
+                  <button @click="updateStore('moodiness')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="female" src="../static/female/head/moodiness.png"></div></button>
+                </div>
+                
+                <div v-if="value==='nausea'">
+                  <button @click="updateStore('nausea')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="female" src="../static/female/head/nausea.png"></div></button>
+                </div>
+                
+                
+                <div v-if="value==='skin-discoloration'">
+                  <button @click="updateStore('skin-discoloration')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="female" src="../static/female/head/skin-discoloration.png"></div></button>
+                </div>
+                
+                <div v-if="value==='vomiting'">
+                  <button @click="updateStore('vomiting')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="female" src="../static/female/head/vomiting.png"></div></button>
+                </div>
               </div>
         </div>
 
@@ -36,7 +79,66 @@
                 class="card" 
                 :class="value"
                 :key="i">
-                <button v-if="value==='acne'" @click="selectSymptom('acne')">
+
+                <div v-if="value==='acne'"> 
+                  <button @click="updateStore('acne')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button  @click="selectSymptom('acne')"><div class="acne"><img class="male" src="../static/male/head/acne.png"></div></button>
+                </div>
+                <div v-if="value==='blurred-vision'">
+                  <button @click="updateStore('blurred-vision')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="male" src="../static/male/head/blurred-vision.png"></div></button>
+                </div>
+                <div v-if="value==='blurred-vision'">
+                  <button @click="updateStore('bumps')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='bumps'" @click="selectSymptom('bumps')"><div class="bumps"><img class="male" src="../static/male/head/bumps.png"></div></button>
+                </div>
+                
+                <div v-if="value==='dizziness'">
+                  <button @click="updateStore('dizziness')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='dizziness'" @click="selectSymptom('dizziness')"><div class="dizziness"><img class="male" src="../static/male/head/dizziness.png"></div></button>
+                </div>
+                
+                <div v-if="value==='frequent-yawning'">
+                  <button @click="updateStore('frequent-yawning')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='frequent-yawning'" @click="selectSymptom('frequent-yawning')"><div class="frequent-yawning"><img class="male" src="../static/male/head/frequent-yawning.png"></div></button>
+                </div>
+                
+                <div v-if="value==='headache'">
+                  <button @click="updateStore('headache')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='headache'" @click="selectSymptom('headache')"><div class="headache"><img class="male" src="../static/male/head/headache.png"></div></button>
+                </div>
+                
+                <div v-if="value==='increased-thirst'">
+                  <button @click="updateStore('increased-thirst')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='increased-thirst'" @click="selectSymptom('increased-thirst')"><div class="increased-thirst"><img class="male" src="../static/male/head/increased-thirst.png"></div></button>
+                </div>
+                
+                <div v-if="value==='lack-of-sleep'">
+                  <button @click="updateStore('lack-of-sleep')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='lack-of-sleep'" @click="selectSymptom('lack-of-sleep')"><div class="lack-of-sleep"><img class="male" src="../static/male/head/lack-of-sleep.png"></div></button>
+                </div>
+
+                <div v-if="value==='moodiness'">
+                  <button @click="updateStore('moodiness')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="male" src="../static/male/head/moodiness.png"></div></button>
+                </div>
+                
+                <div v-if="value==='nausea'">
+                  <button @click="updateStore('nausea')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="male" src="../static/male/head/nausea.png"></div></button>
+                </div>
+                
+                
+                <div v-if="value==='skin-discoloration'">
+                  <button @click="updateStore('skin-discoloration')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="male" src="../static/male/head/skin-discoloration.png"></div></button>
+                </div>
+                
+                <div v-if="value==='vomiting'">
+                  <button @click="updateStore('vomiting')" class="remove" ><img class="remove-button" src="../static/button/remove.svg"></button>  
+                  <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="male" src="../static/male/head/vomiting.png"></div></button>
+                </div>
+                <!-- <button v-if="value==='acne'" @click="selectSymptom('acne')">
                   <div class="acne"><img class="male" src="../static/male/head/acne.png"></div>
                 </button>
                 <button v-if="value==='blurred-vision'" @click="selectSymptom('blurred-vision')"><div class="blurred-vision"><img class="male" src="../static/male/head/blurred-vision.png"></div></button>
@@ -49,7 +151,7 @@
                 <button v-if="value==='moodiness'" @click="selectSymptom('moodiness')"><div class="moodiness"><img class="male" src="../static/male/head/moodiness.png"></div></button>
                 <button v-if="value==='nausea'" @click="selectSymptom('nausea')"><div class="nausea"><img class="male" src="../static/male/head/nausea.png"></div></button>
                 <button v-if="value==='skin-discoloration'" @click="selectSymptom('skin-discoloration')"><div class="skin-discoloration"><img class="male" src="../static/male/head/skin-discoloration.png"></div></button>
-                <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="male" src="../static/male/head/vomiting.png"></div></button>
+                <button v-if="value==='vomiting'" @click="selectSymptom('vomiting')"><div class="vomiting"><img class="male" src="../static/male/head/vomiting.png"></div></button> -->
               </div>
         </div>
         <!-- <img v-if="this.$store.state.symptoms.length !== 0" v-for="symptom in this.$store.state.symptoms"> -->

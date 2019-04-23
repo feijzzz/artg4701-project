@@ -75,7 +75,9 @@ export default {
       this.$router.push({ name: 'results' });
     },
     linkComplete() {
-      this.$router.push({ name: 'complete' });
+      if (this.$store.state.selectedSymptoms.length !== 0) {
+        this.$router.push({ name: 'complete' });
+      }
     }
   },
   mounted() {
